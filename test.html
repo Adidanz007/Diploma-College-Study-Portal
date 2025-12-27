@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Color Change</title>
+<style>
+  .random-color {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 5px;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+<div class="random-color"></div>
+<div class="random-color"></div>
+<div class="random-color"></div>
+<div class="random-color"></div>
+<div class="random-color"></div>
+<div class="random-color"></div>
+<div class="random-color"></div>
+<div class="random-color"></div>
+<div class="random-color"></div>
+<div class="random-color"></div>
+<div class="random-color"></div>
+<div class="random-color"></div>
+
+<script>
+function changeColor() {
+  const colors = ['blue', 'gold', 'green'];
+  const divs = document.querySelectorAll('.random-color');
+  divs.forEach(div => {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    div.style.backgroundColor = randomColor;
+  });
+}
+
+setInterval(changeColor, 5000); // Change color every 5 seconds
+</script>
+</body>
+</html>
