@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Courses</title>
+  <link rel="stylesheet" href="style.css">
+  <STYLE>
+    /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.courses-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.course {
+  background-color: #007bff;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 50px 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.course p {
+  color: white;
+  font-size: 18px;
+}
+
+.course:hover {
+  transform: scale(1.05);
+}
+section {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+
+}
+
+  </STYLE>
+</head>
+<body>
+
+    <section class="sub-header">
+        <nav>
+            <a href="#"><img src="logo5.png"></a>
+            <div class="nav-links" id="nav-links">
+                <i class="fa fa-solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="coursespage.html">Course</a></li>
+                    <li><a href="admission.html">Admissions</a></li>
+                    <li><a href="#" class="upskill-page">UPSKILL</a></li>
+
+
+                </ul>
+            </div>
+            <i class="fa fa-solid fa-bars" onclick="showMenu()" style="color: gold;"></i>
+        </nav>
+
+        <h1>UPSKILL YOURSELF</h1>
+    </section>
+  <header>
+    <h1><span>YouTube Courses</span></h1>
+  </header>
+  
+  <div class="courses-container">
+    <div class="course" data-youtube-link="https://youtu.be/HcOc7P5BMi4?si=SoLYAajyjlsesh_G">
+      <h2>HTML</h2>
+      <p>HTML Tutorial for Beginners</p>
+    </div>
+    <div class="course" data-youtube-link="https://youtu.be/ESnrn1kAD4E?si=dYfp7Ep2toFT80DO">
+      <h2>CSS</h2>
+      <p>CSS Tutorial for Beginners</p>
+    </div>
+    <div class="course" data-youtube-link="https://youtu.be/VlPiVmYuoqw?si=AGPJVq1LMJiwc2WU">
+      <h2>JavaScript</h2>
+      <p>Java Script Crash course for Beginners</p>
+    </div>
+    <!-- Add more courses as needed -->
+    <div class="course" data-youtube-link="https://youtu.be/j5Zsa_eOXeY?si=byCy6nytioYzAWf7">
+        <h2>DevOps</h2>
+        <p>Devops Engineering</p>
+      </div>
+      <div class="course" data-youtube-link="https://youtu.be/zJSY8tbf_ys?si=nx9qusewTyON9vll">
+        <h2>Front-End Development</h2>
+        <p>Front-End Development Crash Course</p>
+      </div>
+      <div class="course" data-youtube-link="https://youtu.be/SiBw7os-_zI?si=daAK60HDL1KIV6Jb">
+        <h2>OOPs</h2>
+        <p>OOPs Crash Course</p>
+      </div>
+      <div class="course" data-youtube-link="https://youtu.be/ERCMXc8x7mc?si=isDRItlqC3cGwmyY">
+        <h2>PYTHON</h2>
+        <P>Python for Beginners</P>
+      </div>
+      <div class="course" data-youtube-link="https://youtu.be/UmnCZ7-9yDY?si=zzZFgTZoYBW3HrEs">
+        <h2>JAVA</h2>
+        <p>Java for Beginners</p>
+      </div>
+      <div class="course" data-youtube-link="https://youtu.be/7fjOw8ApZ1I?si=mkj47UD8Kle5DSfZ">
+        <h2>BACK-END Development</h2>
+        <P>Back-End Development crash Course (part-1) </P>
+      </div>
+      <div class="course" data-youtube-link="https://youtu.be/irqbmMNs2Bo?si=PspebB7IZ68SNWQd">
+        <h2>C</h2>
+        <p>C Language</p>
+      </div>
+      <div class="course" data-youtube-link="https://youtu.be/yGB9jhsEsr8?si=HGO_BPdgSHe2-Lqx">
+        <h2>C++</h2>
+        <p>C++ Language</p>
+      </div>
+  </div>
+
+  <section>
+    <h1><span>Websites for Concepts of Technical learning</span></h1>
+  </section>
+    <div class="courses-container">
+      <div class="course" data-youtube-link="https://www.w3schools.com/">
+        <h2>W3Schools</h2>
+        
+      </div>
+      <div class="course" data-youtube-link="https://www.codecademy.com/">
+        <h2>Codecademy</h2>
+       
+      </div>
+      <div class="course" data-youtube-link="https://www.freecodecamp.org/">
+        <h2>freeCodeCamp</h2>
+        
+      </div>
+      <div class="course" data-youtube-link="https://www.khanacademy.org/">
+        <h2>Khan Academy</h2>
+        
+      </div>
+      <div class="course" data-youtube-link="https://www.coursera.org/">
+        <h2>Coursera</h2>
+      </div>
+      <div class="course" data-youtube-link="https://www.edx.org/">
+        <h2>EdX</h2>
+      </div>
+      <div class="course" data-youtube-link="https://www.theodinproject.com/">
+        <h2>The Odin Projects</h2>
+      </div>
+      <div class="course" data-youtube-link="https://skillcrush.com/">
+        <h2>SkillCrush</h2>
+      </div>
+      <div class="course" data-youtube-link="https://code.org/">
+        <h2>code.org</h2>
+      </div>
+      <div class="course" data-youtube-link="https://leetcode.com/">
+        <h2>Leetcode</h2>
+      </div>
+      <div class="course" data-youtube-link="https://ocw.mit.edu/">
+        <h2>MIT OpenCourseWare</h2>
+      </div>
+      <div class="course" data-youtube-link="https://www.udemy.com/">
+        <h2>Udemy</h2>
+      </div>
+      
+    </div>
+  
+
+
+  <!-- footer -->
+
+  <footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>About Anjuman Polytechnic</h3>
+            <p>Anjuman Polytechnic is a renowned technical institution committed to providing high-quality education in various disciplines. With a rich history spanning decades, we strive to foster innovation and excellence in our students.</p>
+            <p>Our state-of-the-art campus offers modern facilities and a supportive learning environment. We are dedicated to preparing our graduates for successful careers and lifelong learning.</p>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>Contact Information</h3>
+            <ul>
+                <li><i class="fa fa-map-marker"></i> NEAR MALASAMUDRA BANGALORE ROAD GADAG - 582 103</li>
+                <li><i class="fa fa-phone"></i> +91 9448236321</li>
+                <li><i class="fa fa-envelope"></i> aeipolytech@gmail.com</li>
+            </ul>
+        </div>
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#courses">Academics</a></li>
+                <li><a href="admission.html" target="_blank">Admissions</a></li>
+                <li><a href="coursespage.html"> Course</a></li>
+                <li><a href="#campus">Campus Life</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section social">
+            <h3>Connect Yousufkhan🚀</h3>
+            <ul>
+                <li><a href="https://wa.me/7676969002" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/yousufkhan-pathan-03a00a262/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/yousufkhanjpathan/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Anjuman Polytechnic. All Rights Reserved. Designed by <span>YAAR</span></p>
+    </div>
+</footer>
+
+<button id="back-to-top-btn" title="Go to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+  <script>
+    // script.js
+document.addEventListener("DOMContentLoaded", function() {
+  const courses = document.querySelectorAll(".course");
+  
+  courses.forEach(course => {
+    course.addEventListener("click", function() {
+      const youtubeLink = course.getAttribute("data-youtube-link");
+      if (youtubeLink) {
+        window.location.href = youtubeLink;
+      }
+    });
+  });
+});
+
+// color changing boxes
+
+function changeColor() {
+  const colors = ['blue', 'gold', 'limegreen'];
+  const divs = document.querySelectorAll('.course');
+  divs.forEach(div => {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    div.style.backgroundColor = randomColor;
+  });
+}
+
+setInterval(changeColor, 5000); // Change color every 5 seconds
+
+  </script>
+</body>
+</html>

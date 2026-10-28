@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Anjuman Portal</title>
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+    <main class="auth-card">
+        <h1>Login</h1>
+        <p id="auth-message" class="auth-message" role="alert"></p>
+        <form data-auth-form data-mode="login">
+            <label>
+                <span class="sr-only">Email</span>
+                <input type="email" name="email" placeholder="Enter your email" required autocomplete="email">
+            </label>
+            <label>
+                <span class="sr-only">Password</span>
+                <input type="password" name="password" placeholder="Enter your password" required autocomplete="current-password">
+            </label>
+            <button type="submit">Login</button>
+        </form>
+        <p>Do not have an account? <a href="/register.html">Register now</a></p>
+        <p><a href="/">Back to home</a></p>
+    </main>
+    <script src="/js/auth.js"></script>
+</body>
+</html>
