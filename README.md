@@ -95,11 +95,42 @@ CREATE TABLE users (
 );
 
 ## Security Notes
-    :Change default database credentials in config.php
-    :Use HTTPS in production
-    :Implement rate limiting for login attempts
-    :Regular backup of user data and PDFs
-    :Sanitize all user inputs
+- Keep `.env` local and use `.env.example` as the configuration template.
+- Use HTTPS in production.
+- Login attempts are limited in memory. Configure `LOGIN_RATE_LIMIT` and
+  `LOGIN_RATE_WINDOW_MS`; limits reset when the server restarts and are not
+  shared between multiple server instances.
+- `POST /api/auth/logout` revokes the current JWT for the lifetime of the
+  running server. The frontend also removes its `sessionStorage` token.
+- JWT revocation is intentionally process-local and stores only a SHA-256
+  token identifier. Use shared storage before running multiple backend
+  instances.
+- Regularly back up user data and PDFs.
+- Validate and sanitize all user inputs.
+
+## Testing
+
+The default test command runs database-independent tests:
+
+```powershell
+npm test
+```
+
+Database integration tests are deliberately isolated from the development
+database. They require the explicitly named `user_db_test` database and never
+create it automatically:
+
+```powershell
+$env:DB_NAME = "user_db_test"
+npm run test:integration
+Remove-Item Env:DB_NAME
+```
+
+The integration runner performs a read-only preflight for `user_db_test` and
+its `users` table. If either is unavailable, it reports `SKIP` and exits
+without running database tests. Create `user_db_test` and its schema manually
+only after confirming the database credentials. Never set `DB_NAME` to
+`user_db` for integration tests.
 
 ## License
 This project is created for educational purposes. PDFs and materials are property of the diploma college.

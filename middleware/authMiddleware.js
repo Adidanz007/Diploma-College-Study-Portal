@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const { isTokenRevoked } = require("./tokenRevocation");
 
 const authenticateToken = (req, res, next) => {
     try {
@@ -35,6 +36,13 @@ const authenticateToken = (req, res, next) => {
 
         const token = parts[1];
 
+        if (isTokenRevoked(token)) {
+            return res.status(401).json({
+                success: false,
+                message: "Authentication token has been revoked"
+            });
+        }
+
         // Verify JWT
         const decoded = jwt.verify(
             token,
@@ -54,6 +62,7 @@ const authenticateToken = (req, res, next) => {
 
         // Store decoded user information
         req.user = decoded;
+        req.authToken = token;
 
         // Continue to the requested route
         next();

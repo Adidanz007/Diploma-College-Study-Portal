@@ -53,6 +53,15 @@ async function submitAuthForm(event) {
     }
 }
 
+function logoutUser() {
+    sessionStorage.removeItem("authToken");
+    window.location.href = "/login.html";
+}
+
+document.querySelectorAll("[data-logout]").forEach((element) => {
+    element.addEventListener("click", logoutUser);
+});
+
 document.querySelectorAll("[data-auth-form]").forEach((form) => {
     const button = form.querySelector("button[type='submit']");
     button.dataset.label = button.textContent;

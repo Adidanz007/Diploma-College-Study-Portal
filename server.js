@@ -2,11 +2,14 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const authRoutes = require("./routes/auth");
+const { cleanupLoginRateLimits } = require("./middleware/loginRateLimiter");
 
 dotenv.config();
 const db = require("./config/db");
 
 const app = express();
+const loginRateLimitCleanup = setInterval(cleanupLoginRateLimits, 60000);
+loginRateLimitCleanup.unref();
 const PORT = process.env.PORT || 5000;
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || `http://localhost:${PORT}`)
     .split(",")
@@ -58,7 +61,21 @@ app.get("/api/db-test", async (req, res) => {
     }
 });
 
+app.use("/api", (req, res) => {
+    res.status(404).json({
+        success: false,
+        message: "API route not found"
+    });
+});
+
 app.use((error, req, res, next) => {
+    if (error.type === "entity.parse.failed") {
+        return res.status(400).json({
+            success: false,
+            message: "Malformed JSON request body"
+        });
+    }
+
     if (error.message === "Origin is not allowed by CORS") {
         return res.status(403).json({
             success: false,
